@@ -1,5 +1,6 @@
 package com.guiapplications.workshop_mongo.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,5 +28,9 @@ public class PostService {
 	
 	public List<Post> findByTitle(String text){
 		return postRepository.searchTitle(text);
+	}
+	
+	public List<Post> fullSearch(String text, LocalDateTime minDate, LocalDateTime maxDate){
+		return postRepository.fullSearch(text, minDate, maxDate);
 	}
 }
